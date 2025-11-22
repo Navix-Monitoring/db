@@ -90,7 +90,7 @@ CREATE TABLE veiculo(
 -- Tabela: hardware (Ajustado o 'id' para ser AUTO_INCREMENT para facilitar as FKs)
 CREATE TABLE hardware(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    tipo ENUM('CPU','RAM','DISCO')
+    tipo ENUM('CPU','RAM','DISCO', 'CPUPROCESSOS', 'RAMPROCESSOS','DISCOPROCESSOS')
 );
 
 -- Tabela Associativa: parametroHardware (N:N)
@@ -183,14 +183,20 @@ INSERT INTO veiculo (fkModelo, fkLote, data_ativacao) VALUES
 INSERT INTO hardware (tipo) VALUES 
 ('CPU'),
 ('RAM'),
-('DISCO');
+('DISCO'),
+('CPUPROCESSOS'),
+('RAMPROCESSOS'),
+('DISCOPROCESSOS');
 
--- Inserir parametros hardware (CPU uso, CPU temperatura, RAM, Disco)
+-- Inserir parametros hardware (CPU uso, CPU temperatura, RAM, Disco, CPU processos, RAM processos, DISCO processos)
 INSERT INTO parametroHardware (fkHardware, fkModelo, unidadeMedida, parametroMinimo, parametroNeutro, parametroAtencao, parametroCritico) VALUES 
-(1, 1, 'USO', 20, 50, 75, 90),        -- CPU uso
+(1, 1, 'USO', 20, 50, 75, 90), -- CPU uso
 (1, 1, 'TEMPERATURA', 40, 60, 75, 90), -- CPU temperatura
-(2, 1, 'GB', 15, 25, 60, 80),          -- RAM
-(3, 1, 'GB', 10, 20, 60, 80);          -- Disco
+(2, 1, 'GB', 15, 25, 60, 80), -- RAM
+(3, 1, 'GB', 10, 20, 60, 80), -- Disco
+(4,1,'USO',0,50,70,100), -- CPU processos
+(5,1,'MB',0,10,20,30), -- RAM processos
+(6,1,'MB', 0, 2,5,10); -- DISCO processos
 
 
 select * from funcionario f
