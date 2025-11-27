@@ -66,6 +66,7 @@ CREATE TABLE lote(
 CREATE TABLE modelo(
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50),
+    mac_address VARCHAR(20) UNIQUE NULL,
     status ENUM('Ativo','Descontinuado'),
     versaoPilotoAutomatico VARCHAR(45),
     fkEmpresa int,
@@ -151,21 +152,21 @@ INSERT INTO lote (codigo_lote, data_fabricacao, fkEmpresa, status) VALUES
 ('OIL-K62Z', '2025-04-17', 2, 'ativo');
 
 -- Inserir modelos
-INSERT INTO modelo (nome, status, versaoPilotoAutomatico, fkEmpresa) VALUES 
-('NAV-M100', 'Ativo', '1.2.5', 1),
-('NAV-M200', 'Descontinuado', '2.0.1', 2),
-('E-Drive Alpha L3', 'ativo','1.2.5', 1),
-('NeoMotion LX3', 'descontinuado','2.3.5', 2),
-('Voltura Urban 300', 'ativo','6.4.2', 2),
-('Autovance E3', 'descontinuado','2.4.6', 1),
-('TerraEV Vision L3', 'ativo','1.5.3', 2),
-('E-Drive Alpha L4', 'ativo','6.8.9', 1),
-('NeoMotion LX4', 'ativo','2.2.5', 2),
-('Voltura Urban 400', 'descontinuado','2.2.2', 1),
-('Autovance E4', 'ativo','7.5.3', 1),
-('TerraEV Vision L4', 'descontinuado','4.5.9', 2),
-('SkyRide Autonomous', 'ativo','7.3.2', 2),
-('ElectraOne L4+', 'descontinuado','2.3.4', 2);
+INSERT INTO modelo (nome, mac_address, status, versaoPilotoAutomatico, fkEmpresa) VALUES 
+('NAV-M100', NULL, 'Ativo', '1.2.5', 1),
+('NAV-M200', NULL, 'Descontinuado', '2.0.1', 2),
+('E-Drive Alpha L3', NULL, 'ativo','1.2.5', 1),
+('NeoMotion LX3', NULL, 'descontinuado','2.3.5', 2),
+('Voltura Urban 300', NULL, 'ativo','6.4.2', 2),
+('Autovance E3', NULL, 'descontinuado','2.4.6', 1),
+('TerraEV Vision L3', NULL, 'ativo','1.5.3', 2),
+('E-Drive Alpha L4', NULL, 'ativo','6.8.9', 1),
+('NeoMotion LX4', NULL, 'ativo','2.2.5', 2),
+('Voltura Urban 400', NULL, 'descontinuado','2.2.2', 1),
+('Autovance E4', NULL, 'ativo','7.5.3', 1),
+('TerraEV Vision L4', NULL, 'descontinuado','4.5.9', 2),
+('SkyRide Autonomous', NULL, 'ativo','7.3.2', 2),
+('ElectraOne L4+', NULL, 'descontinuado','2.3.4', 2);
 
 INSERT INTO veiculo (fkModelo, fkLote, data_ativacao) VALUES 
 (1, 1, '2025-01-01'),
