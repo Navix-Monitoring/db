@@ -189,6 +189,7 @@ INSERT INTO hardware (tipo) VALUES
 INSERT INTO parametroHardware (fkHardware, fkModelo, unidadeMedida, parametroMinimo, parametroNeutro, parametroAtencao, parametroCritico) VALUES 
 (1, 1, 'USO', 20, 50, 75, 90),
 (1, 1, 'TEMPERATURA', 40, 60, 75, 90),
+(1, 1, 'QTD', 120, 160, 210, 250),
 (2, 1, 'GB', 15, 25, 60, 80),
 (3, 1, 'GB', 10, 20, 60, 80),
 (4, 1, 'USO', 0, 50, 70, 100),
