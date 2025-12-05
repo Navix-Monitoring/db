@@ -135,21 +135,7 @@ INSERT INTO lote (codigo_lote, data_fabricacao, fkEmpresa, status) VALUES
 ('LT-C19P', '2025-03-23', 1, 'ativo'),
 ('LT-D58X', '2025-05-09', 1, 'manutenção'),
 ('LT-E07L', '2025-07-02', 1, 'ativo'),
-('LT-F34T', '2025-06-14', 1, 'ativo'),
-('LT-G91R', '2025-09-26', 1, 'ativo'),
-('LT-H56N', '2025-01-30', 1, 'manutenção'),
-('LT-J83M', '2025-10-08', 1, 'ativo'),
-('LT-K62Z', '2025-04-17', 1, 'inativo'),
-('ENG-A93F', '2025-02-11', 2, 'ativo'),
-('CAR-B72K', '2024-12-28', 2, 'ativo'),
-('TRN-C19P', '2025-03-23', 2, 'manutenção'),
-('BRK-D58X', '2025-05-09', 2, 'ativo'),
-('SUS-E07L', '2025-07-02', 2, 'ativo'),
-('ELE-F34T', '2025-06-14', 2, 'ativo'),
-('INT-G91R', '2025-09-26', 2, 'inativo'),
-('EXT-H56N', '2025-01-30', 2, 'manutenção'),
-('TIR-J83M', '2025-10-08', 2, 'ativo'),
-('OIL-K62Z', '2025-04-17', 2, 'ativo');
+('LT-F34T', '2025-06-14', 1, 'ativo');
 
 -- Inserir modelos
 INSERT INTO modelo (nome, mac_address, status, versaoPilotoAutomatico, fkEmpresa) VALUES 
