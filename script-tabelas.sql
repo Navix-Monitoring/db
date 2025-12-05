@@ -125,7 +125,7 @@ INSERT INTO endereco (rua, numero, cep, bairro, cidade, estado, pais, fkEmpresa)
 -- Inserir funcionários
 INSERT INTO funcionario (fkEmpresa, nome, sobrenome, telefone, statusPerfil, email, senha, fkCargo) VALUES 
 (1, 'Carlos', 'Silva', '11987654321', 'Ativo', 'carlos.silva@tech.com', 'senha123', 1),
-(2, 'Ana', 'Oliveira', '11987654322','Ativo', 'ana.oliveira@auto.com', 'senha456', 2),
+(1, 'Ana', 'Oliveira', '11987654322','Ativo', 'ana.oliveira@auto.com', 'senha456', 2),
 (1, 'Gabriel', 'Santos', '11982654321','Ativo', 'gabriel.santos@tech.com', 'senha143', 3);
 
 -- Inserir lotes
@@ -139,30 +139,15 @@ INSERT INTO lote (codigo_lote, data_fabricacao, fkEmpresa, status) VALUES
 
 -- Inserir modelos
 INSERT INTO modelo (nome, mac_address, status, versaoPilotoAutomatico, fkEmpresa) VALUES 
-('NAV-M100', NULL, 'Ativo', '1.2.5', 1),
-('NAV-M200', NULL, 'Descontinuado', '2.0.1', 2),
-('E-Drive Alpha L3', NULL, 'ativo','1.2.5', 1),
-('NeoMotion LX3', NULL, 'descontinuado','2.3.5', 2),
-('Voltura Urban 300', NULL, 'ativo','6.4.2', 2),
-('Autovance E3', NULL, 'descontinuado','2.4.6', 1),
-('TerraEV Vision L3', NULL, 'ativo','1.5.3', 2),
-('E-Drive Alpha L4', NULL, 'ativo','6.8.9', 1),
-('NeoMotion LX4', NULL, 'ativo','2.2.5', 2),
-('Voltura Urban 400', NULL, 'descontinuado','2.2.2', 1),
-('Autovance E4', NULL, 'ativo','7.5.3', 1),
-('TerraEV Vision L4', NULL, 'descontinuado','4.5.9', 2),
-('SkyRide Autonomous', NULL, 'ativo','7.3.2', 2),
-('ElectraOne L4+', NULL, 'descontinuado','2.3.4', 2);
+('NAV-M100', NULL, 'Ativo', '1.2.5', 1);
 
 INSERT INTO veiculo (fkModelo, fkLote, data_ativacao) VALUES 
 (1, 1, '2025-01-01'),
-(2, 2, '2025-02-15'),
-(1, 1, '2025-01-01'),
 (1, 2, '2025-02-15'),
-(1, 3, '2025-03-10'),
-(1, 4, '2025-04-18'),
-(1, 5, '2025-05-22'),
-(1, 6, '2025-06-30');
+(1, 3, '2025-01-01'),
+(1, 4, '2025-02-15'),
+(1, 5, '2025-03-10'),
+(1, 6, '2025-04-18');
 
 INSERT INTO hardware (tipo) VALUES 
 ('CPU'),
@@ -175,9 +160,9 @@ INSERT INTO hardware (tipo) VALUES
 INSERT INTO parametroHardware (fkHardware, fkModelo, unidadeMedida, parametroMinimo, parametroNeutro, parametroAtencao, parametroCritico) VALUES 
 (1, 1, 'USO', 20, 50, 75, 90),
 (1, 1, 'TEMPERATURA', 40, 60, 75, 90),
-(1, 1, 'QTD', 2500, 1000, 500, 250),
+(1, 1, 'QTD', 120, 160, 210, 250),
 (2, 1, 'GB', 15, 25, 60, 80),
 (3, 1, 'GB', 10, 20, 60, 80),
-(4, 1, 'USO', 0, 50, 70, 100),
-(5, 1, 'MB', 0, 10, 20, 30),
-(6, 1, 'MB', 0, 2, 5, 10);
+(4, 1, 'USO', 5, 20, 40, 60),
+(5, 1, 'MB', 50, 120, 200, 300),
+(6, 1, 'MB', 0, 5, 10, 20);
